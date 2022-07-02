@@ -1,8 +1,12 @@
 const express = require("express");
 const axios = require("axios").default;
 const app = express();
+const nocache = require("nocache");
+
 const nodeHtmlToImage = require("node-html-to-image");
 const port = process.env.PORT || 3000;
+
+app.use(nocache());
 
 app.get("/:owner/:reponame", async (req, res) => {
   await axios
