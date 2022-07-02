@@ -24,6 +24,10 @@ app.get("/:owner/:reponame", async (req, res) => {
     });
 });
 
+app.get("/", async (req, res) => {
+  res.send(" use url /:owner/:reponame");
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
