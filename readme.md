@@ -14,10 +14,20 @@ This project usefull when u have to show ur stargazers in Markdown
 
 > Replace :owner and :repo
 
----
-
 - Example
 
 ```
 <img alt="shubham8550/stars-github" src="https://stars-github.herokuapp.com/Synthesized-Infinity/Ethereal">
 ```
+
+---
+
+## Limitations
+
+- Max Stargazers is 100 u can increase it easily make Pull Request for it if u want :P (make new route for no limit feature)
+
+---
+
+# Stargazers of this repo
+
+<img alt="shubham8550/stars-github" src="https://stars-github.herokuapp.com/shubham8550/stars-github">
