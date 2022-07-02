@@ -4,4 +4,4 @@ This porject usefull when u have to show ur stargazers in Markdown
 
 - Example
 
-> ![Sample](http://localhost:3000/Synthesized-Infinity/Ethereal)
+> ![Sample](https://stars-github.herokuapp.com/Synthesized-Infinity/Ethereal)
