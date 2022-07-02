@@ -15,6 +15,9 @@ app.get("/:owner/:reponame", async (req, res) => {
       const image = await nodeHtmlToImage({
         html: svgGenerator(response.data),
         transparent: true,
+        puppeteerArgs: {
+          args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        },
       });
       res.writeHead(200, { "Content-Type": "image/png" });
       res.end(image, "binary");
