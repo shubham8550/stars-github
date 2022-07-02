@@ -1,6 +1,7 @@
 const express = require("express");
 const axios = require("axios").default;
 const app = express();
+const nodeHtmlToImage = require("node-html-to-image");
 const port = process.env.PORT || 3000;
 
 app.get("/:owner/:reponame", async (req, res) => {
@@ -8,9 +9,17 @@ app.get("/:owner/:reponame", async (req, res) => {
     .get(
       `https://api.github.com/repos/${req.params.owner}/${req.params.reponame}/stargazers?per_page=100`
     )
-    .then(function (response) {
+    .then(async function (response) {
       // handle success
-      res.send(svgGenerator(response.data));
+
+      const image = await nodeHtmlToImage({
+        html: svgGenerator(response.data),
+        transparent: true,
+      });
+      res.writeHead(200, { "Content-Type": "image/png" });
+      res.end(image, "binary");
+
+      // res.send(svgGenerator(response.data));
       //console.log(response);
     })
     .catch(function (error) {
